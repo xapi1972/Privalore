@@ -118,7 +118,7 @@ function startMap() {
 // formGetCoords.addEventListener('submit', getCloseBuildings());
 
 function getCloseBuildings(element) {
-  console.log('estem a dins abans de cridar AXIOS');
+  console.log('estem a dins de GETCLOSEBUILDINGS abans de cridar AXIOS');
   let address = document.getElementById("address").value;
   let number = document.getElementById("number").value;
   let zipcode = document.getElementById("zipcode").value;

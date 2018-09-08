@@ -11,11 +11,13 @@ module.exports = {
       const {address, number, zipcode, city, estadoInmueble} = req.body;
       console.log('el req.body es:', req.body);
       console.log('el valor de address es:', address);
-      const query = address + '' + number; 
+      const query = address + ' ' + number + ',' + zipcode + ' ' + city + ', Spain'; 
       // query.concat(address,' ',number,',',zipcode,' ',city,' Spain');
       console.log('el query del geocoding es:',query);
       geo.geocode('mapbox.places', query, (err, geoData) => {
         if (geoData) {
+          console.log('hem entrat a dins de geoData per obtenir les coordenades');
+          console.log('el valor de geodata es:', geoData);
           let longitude = geoData.features[0].geometry.coordinates[0];
           let latitude = geoData.features[0].geometry.coordinates[1];
           let coordsBuilding = {

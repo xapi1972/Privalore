@@ -3,9 +3,10 @@ function getCoords() {
   let address = document.getElementById("address").value;
   let number = document.getElementById("number").value;
   let zipcode = document.getElementById("zipcode").value;
-  let stateBuilding = document.getElementById("estadoInmueble").value;
+  let city = document.getElementById("city").value;
+  // let stateBuilding = document.getElementById("estadoInmueble").value;
   // let address = $('#address').val();
-  console.log('el valor de adreça es:');
+  console.log('el valor de adreça es:',address+' '+number);
   // let numActivity = element.getAttribute('numActivity');
   // let attributeJSON = element.getAttribute('dataprofile');
   // let dataTransaction = JSON.parse(attributeJSON);
@@ -13,7 +14,8 @@ function getCoords() {
     address: address,
     number: number,
     zipcode: zipcode,
-    stateBuilding: stateBuilding
+    city: city
+    // stateBuilding: stateBuilding
   };
   console.log('el valor de dataAddress es:',dataAddress);
   axios.post('http://localhost:3000/api/getBuildingLocation', dataAddress)
