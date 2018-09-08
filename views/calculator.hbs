@@ -1,0 +1,61 @@
+{{!-- ----------------------SECTION: Logo, formulari i presentacio del mapa-------------------------------- --}}
+<div id="container-land-page-calculator">
+  <div id="logo-container">
+    <div name="left">
+      <img src='images/vendedor-logo.png' border='0' alt='Privalore'>
+    </div>
+    <div name="right">
+      {{!-- solo llenamos de un blackground color el fondo --}}
+    </div>
+  </div>
+    
+  <div id="search-form-container">
+    <div id="search-form-address">
+        <p id="titulo-formulario">Valoración de inmuebles:</p>
+         <form id="formGetCoords">
+            <fieldset>
+              <label for="address">Nombre de calle/avenida:</label>
+              <input type="text" class="form-control form-control-sm" id="address" name="address">
+            </fieldset>
+            <fieldset >
+              <label for="number">Num.:</label>
+              <input type="text" class="form-control form-control-sm" id="number" name="number">
+            </fieldset>
+            <fieldset >
+              <label for="zipcode">Código Postal:</label>
+              <input type="text" class="form-control form-control-sm" id="zipcode" name="zipcode">
+            </fieldset>
+            <fieldset >
+              <label for="city">Ciudad:</label>
+              <input type="text" class="form-control form-control-sm" id="city" name="city">
+            </fieldset>
+            <fieldset  id="radio-button-menu">
+              <legend>Estado del inmueble</legend>
+                <input type="radio" id="estado1" name="estadoInmueble" value="1"> <label for="estado1">A Reformar</label>
+                <input type="radio" id="estado2" name="estadoInmueble" value="2"> <label for="estado2">Bien</label>
+                <input type="radio" id="estado3" name="estadoInmueble" value="3"> <label for="estado3">Muy Bien</label>
+            </fieldset>
+            <button type="submit" class="btn btn-info" onclick="getCoords()"></button>
+            {{!-- <button type="button" class="btn btn-info" onclick="getCloseBuildings()">Consultar</button> --}}
+          </form>
+          <button class="btn btn-info" onclick="getCoords()"></button>
+
+          
+       
+    </div>
+    <div id="map"></div>
+  </div>
+    
+</div>
+  
+    
+  
+
+
+<p>Estem en la vista del mapa</p>
+    
+ 
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.48.0/mapbox-gl.js'></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript" src="/javascripts/getcoords.js"></script>
