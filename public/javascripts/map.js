@@ -3,7 +3,7 @@ var viewportWidth = $(window).width();
 document.getElementById('container-land-page-calculator').setAttribute("style",`height:${viewportHeight}px`);
 
 // ------------------------------MAP BOX------------------------------------------------------------------
-mapboxgl.accessToken = 'pk.eyJ1IjoibWFyaW9uYXJvY2EiLCJhIjoiY2prYTFlMHhuMjVlaTNrbWV6M3QycHlxMiJ9.MZnaxVqaxmF5fMrxlgTvlw';
+// mapboxgl.accessToken = 'pk.eyJ1IjoibWFyaW9uYXJvY2EiLCJhIjoiY2prYTFlMHhuMjVlaTNrbWV6M3QycHlxMiJ9.MZnaxVqaxmF5fMrxlgTvlw';
 
 // mapboxgl.accessToken = 'pk.eyJ1IjoiYWxiZXJ0ZmFycmUiLCJhIjoiY2prYTFldmkwMXUzcDNrcDJiNnY4dHQ1MyJ9.FjBZAgLX8rRpeJwXQrJ9Ig';
 
@@ -20,7 +20,7 @@ console.log('estem en aquest punt');
 
 
 
-function startMap() {
+function startMap22() {
   const ironhackBCN = {
   	lat: 41.3977381,
     lng: 2.190471916};
@@ -42,6 +42,8 @@ function startMap() {
   // return map;
     
   };
+
+  // startMap();
 
 // var map = startMap(); // per poder utilizar la variable map fora de la funció startMap(), haig de retornar la variable
 

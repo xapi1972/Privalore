@@ -1,6 +1,9 @@
-var geo = require('mapbox-geocoding');
-var express = require('express');
-var router = express.Router();
+
+const geo = require('mapbox-geocoding');
+const express = require('express');
+const router = express.Router();
+// const Buildings = require('./models/buildings');
+const Middleware = require('../middlewares');
 
 geo.setAccessToken('pk.eyJ1IjoibWFyaW9uYXJvY2EiLCJhIjoiY2prYTFlMHhuMjVlaTNrbWV6M3QycHlxMiJ9.MZnaxVqaxmF5fMrxlgTvlw');
 
@@ -13,6 +16,12 @@ router.get('/', function(req, res, next) {
 router.get('/calculator', function(req, res, next) {
   res.render('calculator', { title: 'Privalore Calculator' });
 });
+
+/* GET calculate the GeoJSON information of each document in MongoDB. */
+router.get('/updateGeoJSON', Middleware.createLocationProperty.getCoordsRefInmueble , Middleware.createLocationProperty.updateManyGeoJSONProperty,  (req, res, next) => {
+  console.log('hem fet tots els MIDDLEWARES per actualitzar la informacio de GeoJSON');
+});
+
 
 /* GET calculator page. */
 router.post('/calculator', function(req, res, next) {

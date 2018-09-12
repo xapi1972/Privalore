@@ -26,19 +26,38 @@
               <input type="text" class="form-control form-control-sm" id="zipcode" name="zipcode">
             </fieldset>
             <fieldset >
-              <label for="city">Ciudad:</label>
-              <input type="text" class="form-control form-control-sm" id="city" name="city">
+              <label for="surface">Superficie m<sup>2</sup>:</label>
+              <input type="text" class="form-control form-control-sm" id="surface" name="surface">
             </fieldset>
+            <br>
+            <fieldset >
+              <label>Ciudad:</label>
+              <select id="city" name="city">
+                <option value="Barcelona">Barcelona</option>
+                <option value="Madrid">Madrid</option>
+              </select>
+              {{!-- <label for="city">Ciudad:</label>
+              <input type="text" class="form-control form-control-sm" id="city" name="city"> --}}
+            </fieldset>
+            <br>
             <fieldset  id="radio-button-menu">
-              <legend>Estado del inmueble</legend>
+              <label>Estado del inmueble:</label>
+              <select id="estadoInmueble" name="state">
+                <option value="A Reformar">A Reformar</option>
+                <option value="Reformado">Reformado</option>
+                <option value="Bien">Bien</option>
+                <option value="Muy Bien">Muy Bien</option>
+                <option value="Casi Nuevo">Casi Nuevo</option>
+              </select>
+              {{!-- <legend>Estado del inmueble</legend>
                 <input type="radio" id="estado1" name="estadoInmueble" value="1"> <label for="estado1">A Reformar</label>
                 <input type="radio" id="estado2" name="estadoInmueble" value="2"> <label for="estado2">Bien</label>
-                <input type="radio" id="estado3" name="estadoInmueble" value="3"> <label for="estado3">Muy Bien</label>
+                <input type="radio" id="estado3" name="estadoInmueble" value="3"> <label for="estado3">Muy Bien</label> --}}
             </fieldset>
             {{!-- <button type="submit" class="btn btn-info" onclick="getCoords()"></button> --}}
             {{!-- <button type="button" class="btn btn-info" onclick="getCloseBuildings()">Consultar</button> --}}
           </form>
-          <button class="btn btn-info" onclick="getCoords()"></button>
+          <button class="btn btn-info" onclick="getCoords()">Consultar</button>
 
           
        
