@@ -175,7 +175,6 @@ function getCoords() {
 
 //  1)------------CARGAMOS EL MAPA INICIAL, ASIGNAMOS A UNA VARIABLE 'map' PARA USARLO DENTRO DE LA FUNCION getCoords()------------------------------
 
-// startMap();
 var map = startMap(); // per poder utilizar la variable map fora de la funció startMap(), haig de retornar la variable
 
 // Center the map on the coordinates of any clicked symbol from the 'symbols' layer.
@@ -192,3 +191,13 @@ map.on('mouseenter', 'symbols', function () {
 map.on('mouseleave', 'symbols', function () {
   map.getCanvas().style.cursor = '';
 });
+
+
+// 2)---------------------CLEAR INPUT FIELDS-----------------------------------------------------
+
+function clearResults() {
+  document.getElementById("address").value = '';
+  document.getElementById("number").value = '';
+  document.getElementById("zipcode").value = '';
+  document.getElementById("surface").value = '';
+}
