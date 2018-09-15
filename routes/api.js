@@ -2,9 +2,10 @@ var geo = require('mapbox-geocoding');
 var express = require('express');
 var router = express.Router();
 const Middleware = require('../middlewares');
+require("dotenv").config();
 
-geo.setAccessToken('pk.eyJ1IjoibWFyaW9uYXJvY2EiLCJhIjoiY2prYTFlMHhuMjVlaTNrbWV6M3QycHlxMiJ9.MZnaxVqaxmF5fMrxlgTvlw');
-
+// geo.setAccessToken('pk.eyJ1IjoibWFyaW9uYXJvY2EiLCJhIjoiY2prYTFlMHhuMjVlaTNrbWV6M3QycHlxMiJ9.MZnaxVqaxmF5fMrxlgTvlw');
+geo.setAccessToken(process.env.MAPBOX_TOKEN);
 /* GET calculator page. */
 router.post('/getBuildingLocation', Middleware.getLocation.forwardGeocoding, Middleware.getLocation.getNearestBuildings,(req, res, next) => {
   // const {address, number, zipcode, city, estadoInmueble} = req.body;
