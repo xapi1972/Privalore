@@ -3,10 +3,12 @@
 // document.getElementById('container-land-page-calculator').setAttribute("style",`height:${viewportHeight}px`);
 
 // ------------------------------MAP BOX------------------------------------------------------------------
-// mapboxgl.accessToken = 'pk.eyJ1IjoibWFyaW9uYXJvY2EiLCJhIjoiY2prYTFlMHhuMjVlaTNrbWV6M3QycHlxMiJ9.MZnaxVqaxmF5fMrxlgTvlw';
-require("dotenv").config();
+mapboxgl.accessToken = 'pk.eyJ1IjoibWFyaW9uYXJvY2EiLCJhIjoiY2prYTFlMHhuMjVlaTNrbWV6M3QycHlxMiJ9.MZnaxVqaxmF5fMrxlgTvlw';
+// require("dotenv").config();
 
-mapboxgl.accessToken = process.env.MAPBOX_TOKEN;
+// mapboxgl.accessToken = process.env.MAPBOX_TOKEN;
+
+// console.log('el valor de MAPBOXTOKEN es:',process.env.MAPBOX_TOKEN);
 
 
 function startMap() {
@@ -46,7 +48,8 @@ function getCoords() {
     // stateBuilding: stateBuilding
   };
   console.log('el valor de dataAddress es:',dataAddress);
-  axios.post('process.env.PRODUCT_URL/api/getBuildingLocation', dataAddress)
+  axios.post(`${process.env.PRODUCT_URL}/api/getBuildingLocation`, dataAddress)
+  axios.post('https://test-priva.herokuapp.com//api/getBuildingLocation', dataAddress)
   
   .then((response) => {
     // $("#getResult2").empty(); //we empty the activities <div>

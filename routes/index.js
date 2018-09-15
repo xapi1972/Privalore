@@ -1,9 +1,13 @@
 
-// const geo = require('mapbox-geocoding');
+const geo = require('mapbox-geocoding');
 const express = require('express');
 const router = express.Router();
 // const Buildings = require('./models/buildings');
 const Middleware = require('../middlewares');
+require("dotenv").config();
+
+
+geo.setAccessToken(process.env.MAPBOX_TOKEN);
 
 // geo.setAccessToken('pk.eyJ1IjoibWFyaW9uYXJvY2EiLCJhIjoiY2prYTFlMHhuMjVlaTNrbWV6M3QycHlxMiJ9.MZnaxVqaxmF5fMrxlgTvlw');
 

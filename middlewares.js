@@ -3,6 +3,7 @@ const Buildings = require('./models/buildings');
 var MapboxClient = require('mapbox');
 var mapbox = require('mapbox');
 var geo = require('mapbox-geocoding');
+// require("dotenv").config();
 // var mapbox = require('./mapbox-geocode.js');
 // var mapBoxClient = new MapboxClient('pk.eyJ1IjoibWFyaW9uYXJvY2EiLCJhIjoiY2prYTFlMHhuMjVlaTNrbWV6M3QycHlxMiJ9.MZnaxVqaxmF5fMrxlgTvlw');
 // geo.setAccessToken('pk.eyJ1IjoibWFyaW9uYXJvY2EiLCJhIjoiY2prYTFlMHhuMjVlaTNrbWV6M3QycHlxMiJ9.MZnaxVqaxmF5fMrxlgTvlw');

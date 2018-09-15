@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
@@ -9,6 +10,8 @@ const usersRouter = require('./routes/users');
 const apiRouter = require('./routes/api');
 
 const app = express();
+
+
 
 // mongodb://administrator:privalore2018@ds145562.mlab.com:45562/realstate
 // sudo mongoimport --uri "mongodb://administrator:privalore2018@ds145562.mlab.com:45562/realstate" --collection users --type csv --headerline --columnsHaveTypes --fields "nombre_portal_web.string(),ref_inmueble.string()" --file importdata.csv
