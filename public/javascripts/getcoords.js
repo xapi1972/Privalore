@@ -49,7 +49,7 @@ function getCoords() {
   };
   console.log('el valor de dataAddress es:',dataAddress);
   // axios.post(`${process.env.PRODUCT_URL}/api/getBuildingLocation`, dataAddress)
-  axios.post('https://test-priva.herokuapp.com//api/getBuildingLocation', dataAddress)
+  axios.post('https://test-priva.herokuapp.com/api/getBuildingLocation', dataAddress)
   
   .then((response) => {
     // $("#getResult2").empty(); //we empty the activities <div>
