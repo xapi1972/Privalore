@@ -23,7 +23,7 @@ router.get('/calculator', function(req, res, next) {
 
 /* GET calculator page. */
 router.get('/virtualtour', function(req, res, next) {
-  res.render('virtualtour', { title: 'Privalore Virtual Tour' });
+  res.render('../public/3Drenders/virtualtour2', {layout: false});
 });
 
 /* GET calculate the GeoJSON information of each document in MongoDB. */
