@@ -11,7 +11,7 @@ const apiRouter = require('./routes/api');
 
 const app = express();
 
-const cors = require('cors');
+// const cors = require('cors');
 
 
 const XFRAME_WHITELIST = [ 'https://www.idealista.com', 'https://www.fotocasa.com' ];
@@ -34,16 +34,16 @@ app.set('view engine', 'hbs');
 // }));
 
 // Allow CORS to access public folder, from any origin. Si utilitzem el setHeader, no estem utilitzant el CORS
-app.use(function(req, res, next) {
-//   if (XFRAME_WHITELIST.indexOf(req.query.domain) !== -1) {
-//     res.header('X-FRAME-OPTIONS', 'ALLOW-FROM ' + req.query.domain);
-// }
-  res.setHeader('X-Frame-Options', 'allow-from https://example.com/');
-  res.setHeader('Access-Control-Allow-Origin', 'https://example.com');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, GET');
-  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
-  next();
-});
+// app.use(function(req, res, next) {
+// //   if (XFRAME_WHITELIST.indexOf(req.query.domain) !== -1) {
+// //     res.header('X-FRAME-OPTIONS', 'ALLOW-FROM ' + req.query.domain);
+// // }
+//   res.setHeader('X-Frame-Options', 'allow-from https://example.com/');
+//   res.setHeader('Access-Control-Allow-Origin', 'https://example.com');
+//   res.setHeader('Access-Control-Allow-Methods', 'POST, GET');
+//   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+//   next();
+// });
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -52,7 +52,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/calculator', indexRouter);
 app.use('/updateGeoJSON', indexRouter); // we use this route to create the 'location' property into MongoDB
 app.use('/users', usersRouter);
 app.use('/api', apiRouter);
