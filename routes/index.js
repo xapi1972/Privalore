@@ -23,6 +23,9 @@ router.get('/calculator', function(req, res, next) {
 
 /* GET calculator page. */
 router.get('/virtualtour', function(req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', 'https://example.com');
+  // res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With');
   res.render('../public/3Drenders/virtualtour2', {layout: false});
 });
 
