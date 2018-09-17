@@ -38,8 +38,8 @@ app.use(function(req, res, next) {
 //   if (XFRAME_WHITELIST.indexOf(req.query.domain) !== -1) {
 //     res.header('X-FRAME-OPTIONS', 'ALLOW-FROM ' + req.query.domain);
 // }
-  res.setHeader('X-Frame-Options', 'allow-from https://www.privalore.es/');
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('X-Frame-Options', 'allow-from https://example.com/');
+  res.setHeader('Access-Control-Allow-Origin', 'https://example.com');
   res.setHeader('Access-Control-Allow-Methods', 'POST, GET');
   res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
   next();
