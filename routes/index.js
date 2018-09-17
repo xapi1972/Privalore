@@ -23,7 +23,7 @@ router.get('/calculator', function(req, res, next) {
 
 /* GET calculator page. */
 router.get('/virtualtour', function(req, res, next) {
-  res.setHeader('X-Frame-Options', 'deny');
+  res.setHeader('X-Frame-Options', 'allow-from https://www.privalore.es');
   // res.setHeader('Access-Control-Allow-Origin', 'https://example.com');
   // res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   // res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With');
