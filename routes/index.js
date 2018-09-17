@@ -21,6 +21,11 @@ router.get('/calculator', function(req, res, next) {
   res.render('calculator', { title: 'Privalore Calculator' });
 });
 
+/* GET calculator page. */
+router.get('/virtualtour', function(req, res, next) {
+  res.render('virtualtour', { title: 'Privalore Virtual Tour' });
+});
+
 /* GET calculate the GeoJSON information of each document in MongoDB. */
 router.get('/updateGeoJSON', Middleware.createLocationProperty.getCoordsRefInmueble , Middleware.createLocationProperty.updateManyGeoJSONProperty,  (req, res, next) => {
   console.log('hem fet tots els MIDDLEWARES per actualitzar la informacio de GeoJSON');

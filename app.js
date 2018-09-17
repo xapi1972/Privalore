@@ -11,6 +11,11 @@ const apiRouter = require('./routes/api');
 
 const app = express();
 
+const cors = require('cors');
+
+
+const XFRAME_WHITELIST = [ 'https://www.idealista.com', 'https://www.fotocasa.com' ];
+
 
 
 // mongodb://administrator:privalore2018@ds145562.mlab.com:45562/realstate
@@ -22,7 +27,23 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
+// app.use(cors({  
+//   origin: ["http://localhost:3000"],
+//   methods: ["GET", "POST"],
+//   allowedHeaders: ["Content-Type", "Authorization"]
+// }));
 
+// Allow CORS to access public folder, from any origin. Si utilitzem el setHeader, no estem utilitzant el CORS
+app.use(function(req, res, next) {
+//   if (XFRAME_WHITELIST.indexOf(req.query.domain) !== -1) {
+//     res.header('X-FRAME-OPTIONS', 'ALLOW-FROM ' + req.query.domain);
+// }
+  res.setHeader('X-Frame-Options', 'allow-from https://www.idealista.com/');
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, GET');
+  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+  next();
+});
 
 app.use(logger('dev'));
 app.use(express.json());
